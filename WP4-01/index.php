@@ -1,11 +1,11 @@
 <?php
 require_once 'classes' . DIRECTORY_SEPARATOR . 'Player.php';
-$players[]= new Player('Dalekorej');
-$players[]= new Player('Kokeš');
-$players[]= new Player('Marešová');
-$players[]= new Player('Klimek');
-$players[]= new Player('Mareš');
-$players[]= new Player('Fenfls');
+$players[]= new Player('Dalekorej', 'mada', 'fighter-plane-1');
+$players[]= new Player('Kokeš', 'maka', 'cannon');
+$players[]= new Player('Marešová', 'kama', 'ship');
+$players[]= new Player('Klimek', 'krkl', 'helicopter');
+$players[]= new Player('Mareš', 'dama', 'submarine');
+$players[]= new Player('Fenfls', 'make', 'gas-mask');
 
 ?>
 
@@ -19,12 +19,40 @@ $players[]= new Player('Fenfls');
         <title>Šrouby od matky</title>
         <link rel="stylesheet" type="text/css" href="assets/ikonik/font/flaticon.css">
         <style>
+        
+       <?php ?>
+
+        .player-mada:before {
+            font-size: 180px;
+        }
+        
+        <?php
+        foreach ($players as $player) {
+            ?>.player-<?php echo $player->getID(); ?>:before {
+                 font-size: <?= $player->getSize(); ?>px;
+             }
+        
+        <?php
+        }
+        
+        ?>
         </style>
     </head>
 
     <body>
-       
-        </div>
+       <div class="row">
+
+       <?php
+                foreach ($players as $player) {
+                    ?><p>Player <?php echo $player->getName(); ?> = <?php echo $player->getSize(); ?></p>
+                    <span class="flaticon-<?php echo $player->getIcon(); ?> player player-<?php echo $player->getID(); ?>" style="color:<?php echo $player->getColor(); ?>"></span>
+                <?php
+                }
+                ?>
+        
+        
+        
+        
     </body>
 
     </html>

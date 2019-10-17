@@ -48,6 +48,21 @@ $players[]= new Player('Fenfls', 'make', 'gas-mask');
                     <span class="flaticon-<?php echo $player->getIcon(); ?> player player-<?php echo $player->getID(); ?>" style="color:<?php echo $player->getColor(); ?>"></span>
                 <?php
                 }
+
+
+                $mostsize = 0;
+                $winner = "none";
+
+                foreach ($players as $player) {
+                    if ($player->getSize() > $mostsize ) {
+                        $mostsize = $player->getSize();
+                        $winner = $player->getName();
+                    }
+                }
+                ?>
+                 <br>
+                <?=
+                 "Vyhrává " . $winner . " se skóre: $mostsize ";
                 ?>
         
         

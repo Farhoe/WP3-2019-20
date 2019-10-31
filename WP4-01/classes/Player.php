@@ -1,4 +1,4 @@
-<?php
+<?php 
  
  class Player
  {
@@ -7,8 +7,9 @@
      private $name;
      private $ID;
      private $icon;
+     private $description;
 
-     public function __construct($name, $ID, $icon, $color = 'none', $size = 0)
+     public function __construct($name, $ID, $icon, $description, $color = 'none', $size = 0)
      {
          {
              if ($size<=0) {
@@ -26,6 +27,7 @@
          $this->size = $size;
          $this->id = $ID;
          $this->icon = $icon;
+         $this->description = $description;
      }
 
      public function getColor()
@@ -48,5 +50,11 @@
      public function getIcon()
      {
          return $this->icon;
+     }
+     public function getDescription() {
+         return $this->description;
+     }
+     public function setDescription($description) {
+         $this->description = $description;
      }
  }

@@ -1,0 +1,12 @@
+{
+    "name": "radar/wp4-1",
+    "description": "tohle je bitka :)",
+    "type": "project",
+    "require": {},
+    "autoload": {
+        "classmap": [
+            "classes/"
+        ]
+    }
+}
+

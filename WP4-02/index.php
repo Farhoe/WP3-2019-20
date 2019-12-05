@@ -11,6 +11,12 @@ require_once "debitor.php";
     <title>Šrouby od matky</title>
 </head>
 <body>
+    <?php 
+    $myDebitor1 = new Debitor(1, 500, "David", "Mareš", "Bad boy");
+    $myDebitor2 = new Debitor(1, 500, "David", "Mareš", "Bad Guy");
     
+    $myDebitorJSON = json_encode((array) $myDebitor)
+    var_dump($myDebitorJSON);
+    ?>
 </body>
 </html>

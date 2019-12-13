@@ -1,7 +1,6 @@
 <?php 
-require_once 'classes' . DIRECTORY_SEPARATOR . 'Database.php';
-
-
+require_once 'classes' . DIRECTORY_SEPARATOR . 'model.php';
+$debitors = Model::getAllDebitors();
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +18,7 @@ $sqlDebitors = "SELECT * FROM Debitors;";
 $resultDebitors = Database::query($sqlDebitors); ?>
     <table class="table table-striped">
 <?php
-while ($row = $resultDebitors->fetch_assoc()) {?>
+foreach ($debitors as $row) {?>
 <tr>
     <td><?= $row['firstname'];?></td>
     <td><?= $row['lastname'];?></td>
